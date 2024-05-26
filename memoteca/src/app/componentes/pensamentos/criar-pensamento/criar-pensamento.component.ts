@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PensamentoService } from '../service/pensamento.service';
+import { PensamentoDTO } from '../model/pensamento-dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -7,24 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarPensamentoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pensamentoService: PensamentoService,
+             private  router: Router) { }
 
   ngOnInit(): void {
   }
-  pensamento = {
-    id: "1",
-    conteudo: "Aprendendo Angular",
-    autoria: "Dev team",
-    modelo: ""
-  };
+  pensamento: PensamentoDTO = new PensamentoDTO();
 
 
   salvarPensamento(): void{
-    window.alert(this.pensamento.conteudo);
+    this.pensamentoService.criarPensamento(this.pensamento).subscribe((resultado)=>{
+      this.router.navigate(["listar-pensamento"]);
+    });
+
   }
 
-  cancelarPensamento() :void{
-    window.alert(this.pensamento.conteudo);
+  cancelarPensamento() : void{
+    this.router.navigate(["listar-pensamento"]);
   }
     
 }

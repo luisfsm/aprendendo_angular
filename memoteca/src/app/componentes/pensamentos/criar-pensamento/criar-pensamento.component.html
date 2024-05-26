@@ -14,7 +14,7 @@
         <div class="container-radio">
             <div class="radio-modelo">
                 <label for="modelo1"> 
-                    <input type="radio" id="modelo1" value="modelo1" name="modelo-card">
+                    <input type="radio" id="modelo1" value="modelo1" name="modelo-card" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="radio-modelo">
-                <label for="modelo1"> 
-                    <input type="radio" id="modelo2" value="modelo2" name="modelo-card">
+                <label for="modelo2"> 
+                    <input type="radio" id="modelo2" value="modelo2" name="modelo-card" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="radio-modelo">
-                <label for="modelo1"> 
-                    <input type="radio" id="modelo3" value="modelo3" name="modelo-card">
+                <label for="modelo3"> 
+                    <input type="radio" id="modelo3" value="modelo3" name="modelo-card" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="acoes">
                 <button class="botao" (click)="salvarPensamento()">Salvar</button>
-                <button class="botao" (click)="cancelarPensamento()" routerLink="/listar-pensamento">Cancelar</button>
+                <button class="botao" (click)="cancelarPensamento()">Cancelar</button>
             </div>
         </div>
     </form>

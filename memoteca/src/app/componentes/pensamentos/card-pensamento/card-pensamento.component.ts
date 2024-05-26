@@ -14,7 +14,7 @@ export class CardPensamentoComponent implements OnInit {
   }
 
   @Input()
-  pensamento : PensamentoDTO = new PensamentoDTO();
+  pensamento: PensamentoDTO = new PensamentoDTO();
 
   larguraPensamento(): string {
     if(this.pensamento.conteudo?.length ?? 0 >= 256){

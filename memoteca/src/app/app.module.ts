@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarPensamentosComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamentos.component';
 import { CardPensamentoComponent } from './componentes/pensamentos/card-pensamento/card-pensamento.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,9 @@ import { CardPensamentoComponent } from './componentes/pensamentos/card-pensamen
   imports: [
     BrowserModule,
     FormsModule, 
-    RouterModule, AppRoutingModule
+    RouterModule, 
+    AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],
